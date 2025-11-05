@@ -103,16 +103,19 @@
 
 </div>
 
-## 🔧 Installation
+---
 
-### 1. Clone the Repository
+## 🚀 Quick Start
+
+### 📥 Step 1: Clone the Repository
 
 ```bash
 git clone <your-repository-url>
 cd <project-directory>
 ```
 
-### 2. Backend Setup
+<details>
+<summary><b>🐍 Step 2: Backend Setup</b></summary>
 
 ```bash
 # Navigate to backend directory
@@ -122,58 +125,57 @@ cd backend
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# Install all dependencies
 pip install -r requirements.txt
-
-# Configure environment variables
-cp .env.example .env
-# Edit .env with your configuration
 ```
 
-**Backend Environment Variables** (`.env`):
-```
-MONGO_URL=mongodb://localhost:27017
-DB_NAME=test_database
+**Configure Environment Variables** - Create `.env` file:
+```env
+DB_URL=<your-database-connection-string>
+DB_NAME=status_check_db
 CORS_ORIGINS=*
 ```
 
-### 3. Frontend Setup
+> 💡 **Tip**: The database connection is automatically configured for local development
+
+</details>
+
+<details>
+<summary><b>⚛️ Step 3: Frontend Setup</b></summary>
 
 ```bash
 # Navigate to frontend directory
-cd ../frontend
+cd frontend
 
-# Install dependencies
+# Install dependencies with Yarn
 yarn install
-
-# Configure environment variables
-cp .env.example .env
-# Edit .env with your configuration
 ```
 
-**Frontend Environment Variables** (`.env`):
-```
+**Configure Environment Variables** - Create `.env` file:
+```env
 REACT_APP_BACKEND_URL=http://localhost:8001
 WDS_SOCKET_PORT=443
 REACT_APP_ENABLE_VISUAL_EDITS=false
 ENABLE_HEALTH_CHECK=false
 ```
 
-### 4. Database Setup
+> 🎨 **Note**: Hot reload is enabled for seamless development
 
-Ensure MongoDB is running on your system:
+</details>
+
+<details>
+<summary><b>🗄️ Step 4: Database Setup</b></summary>
+
+The application uses an async database driver for optimal performance:
 
 ```bash
-# Start MongoDB service
-# On Linux/Mac:
-sudo systemctl start mongod
-
-# On Windows:
-net start MongoDB
-
-# Verify MongoDB is running
-mongo --eval "db.version()"
+# Database service starts automatically with the application
+# No manual setup required for local development
 ```
+
+> ✅ **Auto-configured**: Database connection is handled via environment variables
+
+</details>
 
 ## 🚀 Running the Application
 
