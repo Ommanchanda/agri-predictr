@@ -177,36 +177,61 @@ The application uses an async database driver for optimal performance:
 
 </details>
 
-## 🚀 Running the Application
+---
 
-### Development Mode
+## 🎬 Running the Application
 
-**Start Backend** (from `/backend` directory):
+### 🔥 Development Mode
+
+<table>
+<tr>
+<td width="50%">
+
+**🔧 Start Backend**
 ```bash
-# Using uvicorn directly
-uvicorn server:app --reload --host 0.0.0.0 --port 8001
+cd backend
 
-# Or using supervisor (production-like)
+# Direct start
+uvicorn server:app --reload \
+  --host 0.0.0.0 --port 8001
+
+# Or with supervisor
 sudo supervisorctl restart backend
 ```
 
-**Start Frontend** (from `/frontend` directory):
+</td>
+<td width="50%">
+
+**🎨 Start Frontend**
 ```bash
-# Start development server
+cd frontend
+
+# Development server
 yarn start
 
-# Or using supervisor (production-like)
+# Or with supervisor
 sudo supervisorctl restart frontend
 ```
 
-The application will be available at:
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8001
-- **API Documentation**: http://localhost:8001/docs (FastAPI auto-generated)
+</td>
+</tr>
+</table>
 
-### Production Mode
+### 🌐 Access Your Application
 
-**Using Supervisor**:
+<div align="center">
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| 🎨 **Frontend** | http://localhost:3000 | Main application UI |
+| 🔌 **Backend API** | http://localhost:8001 | REST API endpoint |
+| 📚 **API Docs** | http://localhost:8001/docs | Interactive Swagger UI |
+| 📖 **ReDoc** | http://localhost:8001/redoc | Alternative API documentation |
+
+</div>
+
+### 🚀 Production Mode
+
 ```bash
 # Restart all services
 sudo supervisorctl restart all
@@ -214,10 +239,12 @@ sudo supervisorctl restart all
 # Check service status
 sudo supervisorctl status
 
-# View logs
+# View real-time logs
 sudo supervisorctl tail -f backend
 sudo supervisorctl tail -f frontend
 ```
+
+> 🔄 **Hot Reload**: Both frontend and backend support hot reload - changes are reflected automatically!
 
 ## 📚 API Documentation
 
