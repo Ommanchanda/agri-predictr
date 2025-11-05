@@ -351,43 +351,98 @@ FastAPI automatically generates beautiful, interactive API documentation:
 | **Swagger UI** | • Interactive testing<br>• Request/response samples<br>• Schema validation | [http://localhost:8001/docs](http://localhost:8001/docs) |
 | **ReDoc** | • Clean interface<br>• Downloadable specs<br>• Responsive design | [http://localhost:8001/redoc](http://localhost:8001/redoc) |
 
+---
+
 ## 📁 Project Structure
 
 ```
-.
-├── backend/                    # FastAPI backend
-│   ├── server.py              # Main application file
-│   ├── requirements.txt       # Python dependencies
-│   └── .env                   # Environment variables
-│
-├── frontend/                   # React frontend
-│   ├── public/                # Static files
-│   ├── src/
-│   │   ├── App.js            # Main React component
-│   │   ├── App.css           # Component styles
-│   │   ├── index.js          # Entry point
-│   │   └── index.css         # Global styles
-│   ├── package.json          # Node dependencies
-│   ├── tailwind.config.js    # Tailwind configuration
-│   ├── craco.config.js       # CRACO configuration
-│   └── .env                  # Environment variables
-│
-├── tests/                      # Test files
-├── test_result.md             # Testing documentation
-└── README.md                  # This file
+📦 status-check-app
+┣ 📂 backend/                   # ⚡ FastAPI Backend
+┃ ┣ 📜 server.py               # Main application & API routes
+┃ ┣ 📜 requirements.txt        # Python dependencies
+┃ ┗ 📜 .env                    # Environment configuration
+┃
+┣ 📂 frontend/                  # ⚛️ React Frontend
+┃ ┣ 📂 public/                 # Static assets
+┃ ┣ 📂 src/
+┃ ┃ ┣ 📜 App.js               # Main React component
+┃ ┃ ┣ 📜 App.css              # Component styles
+┃ ┃ ┣ 📜 index.js             # Application entry point
+┃ ┃ ┗ 📜 index.css            # Global styles
+┃ ┣ 📜 package.json           # Node dependencies
+┃ ┣ 📜 tailwind.config.js     # Tailwind configuration
+┃ ┣ 📜 craco.config.js        # CRACO configuration
+┃ ┗ 📜 .env                   # Environment configuration
+┃
+┣ 📂 tests/                     # 🧪 Test suite
+┣ 📜 test_result.md            # Testing documentation
+┗ 📜 README.md                 # You are here! 📍
 ```
 
-## 🔐 Key Design Decisions
+---
 
-1. **UUID Instead of ObjectID**: Using UUID for primary keys instead of MongoDB's ObjectID for better JSON serialization and cross-platform compatibility
+## 🔐 Architecture & Design
 
-2. **Async/Await Pattern**: Motor driver enables async operations for better performance and scalability
+<table>
+<tr>
+<td width="33%">
 
-3. **API Prefix**: All backend routes use `/api` prefix for clear separation and easier nginx/ingress configuration
+### 🎯 **UUID Primary Keys**
+Using UUID instead of traditional IDs for:
+- Better JSON serialization
+- Cross-platform compatibility
+- Enhanced security
 
-4. **CORS Configuration**: Environment-based CORS configuration for flexible deployment options
+</td>
+<td width="33%">
 
-5. **Timestamp Handling**: Automatic UTC timestamp generation with proper ISO string serialization for MongoDB storage
+### ⚡ **Async Operations**
+Leveraging async/await for:
+- Non-blocking I/O
+- Better performance
+- Improved scalability
+
+</td>
+<td width="33%">
+
+### 🔌 **API Prefix Pattern**
+All routes use `/api` prefix for:
+- Clear separation
+- Easier proxy config
+- Better organization
+
+</td>
+</tr>
+<tr>
+<td width="33%">
+
+### 🌍 **CORS Configuration**
+Environment-based setup for:
+- Flexible deployment
+- Security control
+- Multi-origin support
+
+</td>
+<td width="33%">
+
+### ⏰ **UTC Timestamps**
+Automatic timestamp generation:
+- Consistent time zones
+- ISO string format
+- Reliable data tracking
+
+</td>
+<td width="33%">
+
+### 🎨 **Modern UI Components**
+Using Shadcn/ui & Radix:
+- Accessibility first
+- Customizable design
+- Production-ready
+
+</td>
+</tr>
+</table>
 
 ## 🧪 Testing
 
