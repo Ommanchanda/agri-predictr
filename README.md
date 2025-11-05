@@ -444,21 +444,56 @@ Using Shadcn/ui & Radix:
 </tr>
 </table>
 
+---
+
 ## 🧪 Testing
 
-### Backend Testing
+<div align="center">
 
+### Run Tests with Confidence
+
+</div>
+
+<table>
+<tr>
+<td width="50%">
+
+### 🐍 Backend Tests
 ```bash
 cd backend
+
+# Run all tests
 pytest
+
+# Run with coverage
+pytest --cov=.
+
+# Verbose output
+pytest -v
 ```
 
-### Frontend Testing
+</td>
+<td width="50%">
 
+### ⚛️ Frontend Tests
 ```bash
 cd frontend
+
+# Run all tests
 yarn test
+
+# Watch mode
+yarn test --watch
+
+# Coverage report
+yarn test --coverage
 ```
+
+</td>
+</tr>
+</table>
+
+> ✅ **Best Practice**: Always run tests before committing changes!
 
 ## 🔍 Troubleshooting
 
