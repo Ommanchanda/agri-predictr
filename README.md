@@ -23,7 +23,9 @@
 
 <table>
 <tr>
-<td width="50%">
+<td width="50%" align="center">
+
+<img src="https://images.unsplash.com/photo-1591267990532-e5bdb1b0ceb8?w=400&h=300&fit=crop" alt="Modern UI" width="100%">
 
 ### 🎨 **Beautiful Modern UI**
 - Built with React 19 & Shadcn/ui
@@ -32,7 +34,9 @@
 - Smooth animations
 
 </td>
-<td width="50%">
+<td width="50%" align="center">
+
+<img src="https://images.unsplash.com/photo-1677932228273-0d9ed7c492bd?w=400&h=300&fit=crop" alt="Fast API" width="100%">
 
 ### ⚡ **Lightning Fast API**
 - RESTful FastAPI backend
@@ -43,7 +47,9 @@
 </td>
 </tr>
 <tr>
-<td width="50%">
+<td width="50%" align="center">
+
+<img src="https://images.unsplash.com/photo-1730692504752-c411cf0306ac?w=400&h=300&fit=crop" alt="Status Management" width="100%">
 
 ### 📊 **Status Management**
 - Create status checks
@@ -52,7 +58,9 @@
 - Client information logging
 
 </td>
-<td width="50%">
+<td width="50%" align="center">
+
+<img src="https://images.unsplash.com/photo-1667984390538-3dea7a3fe33d?w=400&h=300&fit=crop" alt="Production Ready" width="100%">
 
 ### 🔒 **Production Ready**
 - CORS configuration
