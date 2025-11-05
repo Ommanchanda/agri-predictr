@@ -246,61 +246,110 @@ sudo supervisorctl tail -f frontend
 
 > 🔄 **Hot Reload**: Both frontend and backend support hot reload - changes are reflected automatically!
 
-## 📚 API Documentation
+---
 
-### Endpoints
+## 📚 API Reference
 
-#### 1. Health Check
-```
-GET /api/
-```
-**Response**:
+<div align="center">
+
+### 🎯 Available Endpoints
+
+FastAPI provides **automatic interactive documentation** with beautiful UI!
+
+[![Swagger UI](https://img.shields.io/badge/Swagger-UI-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)](http://localhost:8001/docs)
+[![ReDoc](https://img.shields.io/badge/Re-Doc-8CA1AF?style=for-the-badge&logo=read-the-docs&logoColor=white)](http://localhost:8001/redoc)
+
+</div>
+
+### 🔌 API Endpoints
+
+<details>
+<summary><b>✅ Health Check</b> - Verify API is running</summary>
+
+**Endpoint:** `GET /api/`
+
+**Response:**
 ```json
 {
   "message": "Hello World"
 }
 ```
 
-#### 2. Create Status Check
+**Example:**
+```bash
+curl http://localhost:8001/api/
 ```
-POST /api/status
-```
-**Request Body**:
+
+</details>
+
+<details>
+<summary><b>➕ Create Status Check</b> - Add new status entry</summary>
+
+**Endpoint:** `POST /api/status`
+
+**Request Body:**
 ```json
 {
-  "client_name": "string"
+  "client_name": "Production Server"
 }
 ```
 
-**Response**:
+**Response:**
 ```json
 {
-  "id": "uuid-string",
-  "client_name": "string",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "client_name": "Production Server",
   "timestamp": "2024-01-01T12:00:00Z"
 }
 ```
 
-#### 3. Get All Status Checks
+**Example:**
+```bash
+curl -X POST http://localhost:8001/api/status \
+  -H "Content-Type: application/json" \
+  -d '{"client_name": "Production Server"}'
 ```
-GET /api/status
-```
-**Response**:
+
+</details>
+
+<details>
+<summary><b>📋 Get All Status Checks</b> - Retrieve all entries</summary>
+
+**Endpoint:** `GET /api/status`
+
+**Response:**
 ```json
 [
   {
-    "id": "uuid-string",
-    "client_name": "string",
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "client_name": "Production Server",
     "timestamp": "2024-01-01T12:00:00Z"
+  },
+  {
+    "id": "660e8400-e29b-41d4-a716-446655440001",
+    "client_name": "Development Server",
+    "timestamp": "2024-01-01T12:05:00Z"
   }
 ]
 ```
 
-### Interactive API Documentation
+**Example:**
+```bash
+curl http://localhost:8001/api/status
+```
 
-FastAPI provides automatic interactive API documentation:
-- **Swagger UI**: http://localhost:8001/docs
-- **ReDoc**: http://localhost:8001/redoc
+</details>
+
+---
+
+### 🎨 Interactive Documentation
+
+FastAPI automatically generates beautiful, interactive API documentation:
+
+| Documentation | Features | URL |
+|--------------|----------|-----|
+| **Swagger UI** | • Interactive testing<br>• Request/response samples<br>• Schema validation | [http://localhost:8001/docs](http://localhost:8001/docs) |
+| **ReDoc** | • Clean interface<br>• Downloadable specs<br>• Responsive design | [http://localhost:8001/redoc](http://localhost:8001/redoc) |
 
 ## 📁 Project Structure
 
