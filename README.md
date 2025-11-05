@@ -495,52 +495,120 @@ yarn test --coverage
 
 > ✅ **Best Practice**: Always run tests before committing changes!
 
+---
+
 ## 🔍 Troubleshooting
 
-### Backend Issues
+<div align="center">
 
-**MongoDB Connection Error**:
+### 🆘 Common Issues & Solutions
+
+</div>
+
+<details>
+<summary><b>🐍 Backend Not Starting</b></summary>
+
+**Check Backend Logs:**
 ```bash
-# Check if MongoDB is running
-sudo systemctl status mongod
-
-# Check MongoDB logs
-sudo tail -f /var/log/mongodb/mongod.log
-```
-
-**Backend Not Starting**:
-```bash
-# Check backend logs
+# View supervisor logs
 sudo supervisorctl tail -f backend
 
-# Or check supervisor error logs
+# Check error logs
 tail -n 100 /var/log/supervisor/backend.err.log
 ```
 
-### Frontend Issues
+**Common Fixes:**
+- ✅ Verify all dependencies are installed: `pip install -r requirements.txt`
+- ✅ Check environment variables in `.env` file
+- ✅ Ensure database service is running
+- ✅ Verify port 8001 is not in use: `lsof -i :8001`
 
-**Build Errors**:
+</details>
+
+<details>
+<summary><b>⚛️ Frontend Build Errors</b></summary>
+
+**Clear Cache & Reinstall:**
 ```bash
-# Clear cache and reinstall
+# Remove node modules and lock file
 rm -rf node_modules yarn.lock
+
+# Reinstall dependencies
 yarn install
+
+# Clear cache
+yarn cache clean
 ```
 
-**Port Already in Use**:
+**Common Fixes:**
+- ✅ Ensure Node.js version is 16+: `node --version`
+- ✅ Update Yarn: `npm install -g yarn`
+- ✅ Check for conflicting global packages
+- ✅ Verify environment variables in `.env`
+
+</details>
+
+<details>
+<summary><b>🔌 Port Already in Use</b></summary>
+
+**Frontend (Port 3000):**
 ```bash
-# Find process using port 3000
+# Find process using the port
 lsof -i :3000
 
 # Kill the process
 kill -9 <PID>
 ```
 
-### Database Issues
+**Backend (Port 8001):**
+```bash
+# Find process using the port
+lsof -i :8001
 
-**Connection Refused**:
-- Ensure MongoDB is running: `sudo systemctl start mongod`
-- Check MongoDB port: Default is `27017`
-- Verify `MONGO_URL` in backend `.env` file
+# Kill the process
+kill -9 <PID>
+```
+
+</details>
+
+<details>
+<summary><b>🗄️ Database Connection Issues</b></summary>
+
+**Check Database Status:**
+```bash
+# Verify database service is running
+sudo supervisorctl status
+
+# Check database logs
+tail -f /var/log/supervisor/*.log
+```
+
+**Common Fixes:**
+- ✅ Verify connection string in `.env` file
+- ✅ Check network connectivity
+- ✅ Ensure database service is started
+- ✅ Verify correct database name is configured
+
+</details>
+
+<details>
+<summary><b>🌐 CORS Errors</b></summary>
+
+**Update CORS Configuration:**
+```env
+# In backend/.env
+CORS_ORIGINS=http://localhost:3000,https://yourdomain.com
+```
+
+**Common Fixes:**
+- ✅ Add frontend URL to `CORS_ORIGINS`
+- ✅ Restart backend after changes: `sudo supervisorctl restart backend`
+- ✅ Check browser console for specific CORS errors
+- ✅ Verify API calls use correct backend URL
+
+</details>
+
+> 💡 **Pro Tip**: Check supervisor status regularly with `sudo supervisorctl status` to ensure all services are running!
 
 ## 🚢 Deployment
 
