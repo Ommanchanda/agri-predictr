@@ -673,49 +673,165 @@ docker build -t status-check-frontend ./frontend
 docker-compose up -d
 ```
 
+---
+
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+<div align="center">
 
-### Code Style
+### We Welcome Your Contributions! 🎉
 
-**Backend**:
-- Follow PEP 8 style guide
-- Use type hints
-- Run `black` for formatting
-- Run `flake8` for linting
+</div>
 
-**Frontend**:
-- Follow ESLint configuration
-- Use functional components with hooks
-- Maintain component modularity
+```mermaid
+graph LR
+    A[🍴 Fork] --> B[🌿 Branch]
+    B --> C[💻 Code]
+    C --> D[✅ Test]
+    D --> E[📝 Commit]
+    E --> F[🚀 Push]
+    F --> G[🔄 PR]
+```
 
-## 📝 License
+### 📋 Contribution Steps
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. **🍴 Fork** the repository
+2. **🌿 Create** a feature branch
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **💻 Make** your changes
+4. **✅ Test** your code
+5. **📝 Commit** with clear messages
+   ```bash
+   git commit -m '✨ Add amazing feature'
+   ```
+6. **🚀 Push** to your branch
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+7. **🔄 Open** a Pull Request
 
-## 👥 Authors
+### 📏 Code Style Guidelines
 
-- Your Team Name
+<table>
+<tr>
+<td width="50%">
 
-## 📞 Support
+**🐍 Backend (Python)**
+- ✅ Follow PEP 8 style guide
+- ✅ Use type hints for functions
+- ✅ Format with `black`
+- ✅ Lint with `flake8`
+- ✅ Document complex functions
 
-For issues and questions:
-- Create an issue in the repository
-- Contact: your-email@example.com
+</td>
+<td width="50%">
 
-## 🙏 Acknowledgments
+**⚛️ Frontend (React)**
+- ✅ Follow ESLint configuration
+- ✅ Use functional components
+- ✅ Implement proper hooks
+- ✅ Maintain modularity
+- ✅ Add PropTypes/TypeScript
 
-- FastAPI for the excellent Python web framework
-- React team for the powerful UI library
-- MongoDB for flexible data storage
-- Shadcn for beautiful UI components
-- Tailwind CSS for utility-first styling
+</td>
+</tr>
+</table>
+
+### 🎯 Commit Convention
+
+Use semantic commit messages:
+
+```
+✨ feat: Add new feature
+🐛 fix: Fix bug
+📚 docs: Update documentation
+💄 style: Format code
+♻️ refactor: Refactor code
+✅ test: Add tests
+⚡ perf: Improve performance
+```
 
 ---
 
-**Built with ❤️ using FastAPI, React, and MongoDB**
+## 📝 License
+
+<div align="center">
+
+**MIT License** © 2024
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+</div>
+
+---
+
+## 👥 Authors & Contributors
+
+<div align="center">
+
+### Built with passion by developers, for developers
+
+**Your Team Name**
+
+[🌟 Star us on GitHub](https://github.com/yourusername/status-check-app) • [🐛 Report Bug](https://github.com/yourusername/status-check-app/issues) • [💡 Request Feature](https://github.com/yourusername/status-check-app/issues)
+
+</div>
+
+---
+
+## 📞 Support & Community
+
+<div align="center">
+
+### 💬 Get Help & Stay Connected
+
+| Platform | Link | Purpose |
+|----------|------|---------|
+| 📧 **Email** | your-email@example.com | Direct support |
+| 🐛 **Issues** | [GitHub Issues](https://github.com/yourusername/repo/issues) | Bug reports & features |
+| 💬 **Discussions** | [GitHub Discussions](https://github.com/yourusername/repo/discussions) | Q&A & ideas |
+| 📚 **Docs** | [Documentation](https://docs.yourdomain.com) | Guides & tutorials |
+
+</div>
+
+---
+
+## 🙏 Acknowledgments
+
+<div align="center">
+
+### Special Thanks To
+
+| Technology | Contribution |
+|------------|-------------|
+| ⚡ **FastAPI** | High-performance Python framework |
+| ⚛️ **React 19** | Next-gen UI library |
+| 🎨 **Tailwind CSS** | Beautiful utility-first styling |
+| 🎯 **Radix UI** | Accessible component primitives |
+| 💎 **Shadcn/ui** | Gorgeous, customizable components |
+| 🔧 **Motor** | Async database driver excellence |
+| 📦 **Pydantic** | Rock-solid data validation |
+
+</div>
+
+---
+
+<div align="center">
+
+### ⭐ If you find this project useful, give it a star!
+
+**Built with ❤️ by developers who care about quality**
+
+[![Made with FastAPI](https://img.shields.io/badge/Made%20with-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
+---
+
+**[⬆ Back to Top](#-status-check-application)**
+
+</div>
