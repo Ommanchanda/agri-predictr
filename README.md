@@ -610,23 +610,68 @@ CORS_ORIGINS=http://localhost:3000,https://yourdomain.com
 
 > 💡 **Pro Tip**: Check supervisor status regularly with `sudo supervisorctl status` to ensure all services are running!
 
+---
+
 ## 🚢 Deployment
 
-### Environment-Specific Configuration
+<div align="center">
 
-**Production Backend URL**: Update `REACT_APP_BACKEND_URL` in frontend `.env`:
-```bash
-REACT_APP_BACKEND_URL=https://your-domain.com
+### 🌍 Ready for Production
+
+</div>
+
+### 🔧 Environment Configuration
+
+<table>
+<tr>
+<td width="50%">
+
+**Frontend Configuration**
+
+Update `frontend/.env`:
+```env
+REACT_APP_BACKEND_URL=https://api.yourdomain.com
+WDS_SOCKET_PORT=443
 ```
 
-**Database**: Update `MONGO_URL` in backend `.env` for production MongoDB instance
+</td>
+<td width="50%">
 
-### Kubernetes Deployment
+**Backend Configuration**
 
-This application is configured for Kubernetes deployment with:
-- Ingress rules routing `/api/*` to backend (port 8001)
-- Frontend served on port 3000
-- Supervisor for process management
+Update `backend/.env`:
+```env
+DB_URL=<production-database-url>
+DB_NAME=production_db
+CORS_ORIGINS=https://yourdomain.com
+```
+
+</td>
+</tr>
+</table>
+
+### ☸️ Kubernetes Deployment
+
+This application is **Kubernetes-ready** with:
+
+| Feature | Configuration |
+|---------|---------------|
+| 🔀 **Ingress Routing** | `/api/*` routes to backend (port 8001) |
+| 🎨 **Frontend Serving** | Static files served on port 3000 |
+| 🔄 **Process Management** | Supervisor for service orchestration |
+| 📊 **Scalability** | Horizontal pod autoscaling ready |
+| 🔒 **Security** | Environment-based secrets management |
+
+### 🐳 Docker Support
+
+```bash
+# Build images
+docker build -t status-check-backend ./backend
+docker build -t status-check-frontend ./frontend
+
+# Run containers
+docker-compose up -d
+```
 
 ## 🤝 Contributing
 
